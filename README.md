@@ -16,6 +16,7 @@ Used [node](https://nodejs.org/en/) to run the script
 ## Usage
 Run index.js and use [Insomnia](https://insomnia.rest/) to test the routes. All route info will be located in the routes folder, functionality for routes is in the controllers folder. <br>
 [Here is a video demonstrating the functionality of the API](https://watch.screencastify.com/v/lPErzMjJdsEi7ORPY3UN)<br>
+Screenshot of Route Testing
 ![image](https://user-images.githubusercontent.com/123116188/230563191-e707f2ad-df57-4a63-b10d-5c46130493d6.png)
 
 
