@@ -27,12 +27,11 @@ module.exports = {
       const thoughtData = await Thought.create(req.body);
       !thoughtData
         ? res.status(404).json({ message: "No thought found" })
-        : User.findOneAndUpdate(
+        : await User.findOneAndUpdate(
               { _id: req.body.userId },
-              { $push: { thoughts: `${thoughtData._id}` } },
+              { $push: { thoughts: thoughtData._id } },
               { new: true }
             );
-          
       res.json(thoughtData);
     } catch (err) {
       res.status(500).json(err);
