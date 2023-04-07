@@ -1,4 +1,5 @@
 const router = require("express").Router();
+// importing all route functions from controllers
 const {
   getUsers,
   getsingleUser,

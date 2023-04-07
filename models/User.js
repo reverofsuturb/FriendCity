@@ -15,10 +15,12 @@ const userSchema = new Schema(
       unique: true,
       match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
     },
+    // reference to thought model
     thoughts: [ {
       type: Schema.Types.ObjectId,
       ref: 'thoughts',
     } ],
+    // self reference to user model
     friends: [ {
       type: Schema.Types.ObjectId,
       ref: 'users',
@@ -31,7 +33,7 @@ const userSchema = new Schema(
     id: false,
   }
 );
-
+//  using this so each user reference itself
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+// importing all route functions from controllers
 const {
   getThoughts,
   getsingleThought,
@@ -16,6 +16,6 @@ router.route('/:thoughtId').get(getsingleThought).put(updateThoughtbyId).delete(
 
 router.route('/:thoughtId/reactions').put(createReactionbyThoughtId)
 
-router.route('/:thoughts/reactions/:reactionId/').delete(deleteReactionbyId);
+router.route('/:thoughtId/reactions/:reactionId/').delete(deleteReactionbyId);
 
 module.exports = router;

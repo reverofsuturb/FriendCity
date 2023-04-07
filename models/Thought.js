@@ -1,6 +1,6 @@
 const {Schema, model } = require('mongoose');
 const Reaction = require('./Reaction')
-
+const moment = require('moment')
 
 const thoughtSchema = new Schema(
   {
@@ -13,6 +13,8 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+            // getter for date format using moment
+      get: currentdate => moment(currentdate).format("MMM DD, YYYY hh:mm a"),
 
 
     },
@@ -30,7 +32,7 @@ const thoughtSchema = new Schema(
   id: false,
 }
 );
-
+// using this so that each thought references itself
 thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
